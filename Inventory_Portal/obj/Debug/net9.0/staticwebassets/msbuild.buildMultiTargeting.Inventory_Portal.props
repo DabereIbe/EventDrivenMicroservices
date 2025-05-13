@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Inventory_Portal.props" />
+</Project>

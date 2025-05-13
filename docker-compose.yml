@@ -1,0 +1,76 @@
+version: '3.4'
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.0-management-alpine
+    container_name: rabbitmq
+    volumes:
+      - ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json
+      - ./rabbitmq/etc/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+      - ./rabbitmq/data:/var/lib/rabbitmq/mnesia/rabbit@my-rabbit
+      - ./rabbitmq/logs:/var/log/rabbitmq/log
+    ports:
+      - 5672:5672
+      - 15672:15672
+    networks:
+      - eda
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:15672" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  edacustomer_api:
+    image: edacustomer
+    build:
+      context: .
+      dockerfile: EDA_Customer/Dockerfile
+    restart: on-failure
+    ports:
+      - 5003:5003
+    depends_on:
+      - rabbitmq
+    networks:
+      - eda
+
+  edainventory_api:
+    image: edainventory
+    build:
+      context: .
+      dockerfile: EDA_Inventory/Dockerfile
+    restart: on-failure
+    ports:
+      - 5004:5004
+    depends_on:
+      - rabbitmq
+    networks:
+      - eda
+
+  edacustomer_portal:
+    image: edacustomer_portal
+    build:
+      context: ./CustomerPortal
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 5001:5001
+    depends_on:
+      - edacustomer_api
+    networks:
+      - eda
+
+  edainventory_portal:
+    image: edainventory_portal
+    build:
+      context: ./Inventory_Portal
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 5002:5002
+    depends_on:
+      - edainventory_api
+    networks:
+      - eda
+  
+networks:
+  eda:

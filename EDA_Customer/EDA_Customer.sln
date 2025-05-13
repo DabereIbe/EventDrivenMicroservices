@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA_Customer", "EDA_Customer.csproj", "{380FDB51-772E-483E-BD2D-28DFB3E57168}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EDA_Inventory", "..\EDA_Inventory\EDA_Inventory.csproj", "{B75B2ECC-4709-4D6D-BC43-10E1FADB875F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "..\Shared\Shared.csproj", "{EACB580E-E1CB-4D90-A895-629E566F3BA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventory_Portal", "..\Inventory_Portal\Inventory_Portal.csproj", "{CCBA308F-8853-4225-BE8B-3BE618C52274}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPortal", "..\CustomerPortal\CustomerPortal.csproj", "{3647B66B-7CE0-4DA8-AFA1-3F2634A09B68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		..\docker-compose.yml = ..\docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "rabbitmq", "rabbitmq", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "data", "data", "{6E6F30A3-C7C6-48EA-8EEE-B79A89901568}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "etc", "etc", "{0C7B04AF-054F-420B-B5CC-8A226FF9E65A}"
+	ProjectSection(SolutionItems) = preProject
+		..\rabbitmq\etc\definitions.json = ..\rabbitmq\etc\definitions.json
+		..\rabbitmq\etc\rabbitmq.conf = ..\rabbitmq\etc\rabbitmq.conf
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "logs", "logs", "{7E82D379-0349-4F71-ACF4-3B9B80DD42A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{380FDB51-772E-483E-BD2D-28DFB3E57168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{380FDB51-772E-483E-BD2D-28DFB3E57168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{380FDB51-772E-483E-BD2D-28DFB3E57168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{380FDB51-772E-483E-BD2D-28DFB3E57168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B75B2ECC-4709-4D6D-BC43-10E1FADB875F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B75B2ECC-4709-4D6D-BC43-10E1FADB875F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B75B2ECC-4709-4D6D-BC43-10E1FADB875F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B75B2ECC-4709-4D6D-BC43-10E1FADB875F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EACB580E-E1CB-4D90-A895-629E566F3BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EACB580E-E1CB-4D90-A895-629E566F3BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EACB580E-E1CB-4D90-A895-629E566F3BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EACB580E-E1CB-4D90-A895-629E566F3BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCBA308F-8853-4225-BE8B-3BE618C52274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCBA308F-8853-4225-BE8B-3BE618C52274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCBA308F-8853-4225-BE8B-3BE618C52274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCBA308F-8853-4225-BE8B-3BE618C52274}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3647B66B-7CE0-4DA8-AFA1-3F2634A09B68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3647B66B-7CE0-4DA8-AFA1-3F2634A09B68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3647B66B-7CE0-4DA8-AFA1-3F2634A09B68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3647B66B-7CE0-4DA8-AFA1-3F2634A09B68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}
+		{6E6F30A3-C7C6-48EA-8EEE-B79A89901568} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{0C7B04AF-054F-420B-B5CC-8A226FF9E65A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{7E82D379-0349-4F71-ACF4-3B9B80DD42A7} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6FFA03B-B9C0-48D8-8DD2-2068ECD0A121}
+	EndGlobalSection
+EndGlobal

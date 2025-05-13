@@ -1,0 +1,44 @@
+﻿@model CustomerWithProduct
+
+@{
+    ViewBag.Title = "List Products";
+}
+
+<h1>Create</h1>
+
+<h4>Checkout Product</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Customer" asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <label class="form-label">Select Product</label>
+                    <select class="form-select" asp-items="Model.ProductId" asp-for="SelectedProduct">
+                    </select>
+                </div>
+                <span asp-validation-for="ProductId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ItemInCart" class="control-label">Items to Buy</label>
+                <input asp-for="ItemInCart" class="form-control"/>
+                <span asp-validation-for="ItemInCart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+@* @section Scripts { *@
+@*     @{ *@
+@*         await Html.RenderPartialAsync("_ValidationScriptsPartial"); *@
+@*     } *@
+@* } *@
